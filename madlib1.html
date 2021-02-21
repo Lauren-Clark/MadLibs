@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
+
+        <style type="text/css">
+        #wrapper { background-color:bisque;
+                    width: 70%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 2em;}
+
+         #resetButton { display: none;}
+
+        </style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<img src = "https://www.madlibs.com/wp-content/themes/madlibs/assets/images/mdl_logo.png" width="20%" height="auto" alt="mad libs logo">
+<p>Please enter the following information:</p>
+
+<p>
+ 	<ul>
+       <li>Name <input type="text" id="name"></li>
+       <li>Second Name <input type="text" id="name2"></li>
+       <li>Noun <input type="text" id="noun"></li>
+       <li>Adjective <input type="text" id="adjective"></li>
+       <li>Verb: <input type="text" id="verb"></li>
+       <li>Food: <input type="text" id="food"></li>
+       <li>Day of week: <input type="text" id="day"></li>
+    </ul>
+</p>
+    
+    <button id="lib-button">Submit</button>
+    <div id="story"></div> 
+
+
+ <button type="reset" id="resetButton" value="reset" type="reset" onclick="window.location.reload()">Go again!</button> 
+
+
+
+</div>
+</body>
+
+<script>
+    function madLibs() {
+      var storyDiv =      document.getElementById("story");
+      var libButton = document.getElementById("lib-button");
+      var name = document.getElementById("name").value.toUpperCase();
+      var noun = document.getElementById("noun").value.toUpperCase();
+      var adjective = document.getElementById("adjective").value.toUpperCase();
+      var verb = document.getElementById("verb").value.toUpperCase();
+      var food = document.getElementById("food").value.toUpperCase();
+      var day = document.getElementById("day").value.toUpperCase();   
+      var name2 = document.getElementById("name2").value.toUpperCase();
+     // document.getElementById("resetButton").style.visibility="visible";
+     var madLibsON = true
+
+     if (madLibsON) {
+     	document.getElementById("resetButton").style.display = "block";
+     	document.getElementById('noun').value='';
+     	document.getElementById('name').value='';
+     	document.getElementById('name2').value='';
+     	document.getElementById('adjective').value='';
+     	document.getElementById('verb').value='';
+     	document.getElementById('food').value='';
+     	document.getElementById('day').value='';
+     }
+
+      storyDiv.innerHTML = " Once upon a time, " + name + " was eating their favorite meal which so in fact happened to make them think of a dear old friend because they were eating a " + food + ". " + "It seemed that " + name + " always got a craving for that food when they are feeling " + adjective + ", because it reminded them of old times. " + " They decided that since it was " + day + ", that it would be a good idea to call their friend " + name2 + " to see what they were up to. The two decided they were to going to go " + verb + " because it was a gorgeous day outside. They both decided to bring their best " + noun + " just for old times sake. " + "After all of the " + verb + "-ing, the friends got hungry and decided to go get another meal - more " + food + " of course. They even brought their " + noun + " along, for extra laughs!";
+    }
+
+    var libButton = document.getElementById('lib-button');
+    libButton.addEventListener('click', madLibs);
+
+
+
+</script>
+
+</html> 
